@@ -23,11 +23,9 @@ These recommended frameworks support all the features you need to deploy and sca
 
 **[Next.js's App Router](https://nextjs.org/docs) is a React framework that takes full advantage of React's architecture to enable full-stack React apps.**
 
-//TerminalBlock>
-```bash title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npx create-next-app@latest
-```
-///TerminalBlock>
+{{< /card >}}
 
 Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.js app](https://nextjs.org/docs/app/building-your-application/deploying) to any hosting provider that supports Node.js or Docker containers, or to your own server. Next.js also supports [static export](https://nextjs.org/docs/app/building-your-application/deploying/static-exports) which doesn't require a server.
 
@@ -37,10 +35,9 @@ Next.js is maintained by [Vercel](https://vercel.com/). You can [deploy a Next.j
 
 To create a new React Router framework project, run:
 
-// add terminal style
-```bash title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npx create-react-router@latest
-```
+{{< /card >}}
 
 React Router is maintained by [Shopify](https://www.shopify.com).
 
@@ -48,10 +45,9 @@ React Router is maintained by [Shopify](https://www.shopify.com).
 
 **[Expo](https://expo.dev/) is a React framework that lets you create universal Android, iOS, and web apps with truly native UIs.** It provides an SDK for [React Native](https://reactnative.dev/) that makes the native parts easier to use. To create a new Expo project, run:
 
-// add terminal styling
-```bash title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npx create-expo-app@latest
-```
+{{< /card >}}
 
 If you're new to Expo, check out the [Expo tutorial](https://docs.expo.dev/tutorial/introduction/).
 

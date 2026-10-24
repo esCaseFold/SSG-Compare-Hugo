@@ -42,28 +42,14 @@ A modular JavaScript environment lets you write your React components in individ
 
 To check whether your setup works, run this command in your project folder:
 
-// add terminal styling
->[!warning] Error
->```js title="Terminal"
->npm install react react-dom
->```
+{{< card code=true header="**Terminal**" lang="bash" >}}
+npm install react react-dom
+{{< /card >}}
 
 Then add these lines of code at the top of your main JavaScript file (it might be called `index.js` or `main.js`):
 
-
-// add live edit part
-```html public/index.html hidden
-<!DOCTYPE html>
-<html>
-  <head><title>My app</title></head>
-  <body>
-    <!-- Your existing page content (in this example, it gets replaced) -->
-    <div id="root"></div>
-  </body>
-</html>
-```
-
-```js src/index.js active
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/index.js" >}}
 import { createRoot } from 'react-dom/client';
 
 // Clear the existing HTML content
@@ -72,7 +58,18 @@ document.body.innerHTML = '<div id="app"></div>';
 // Render your React component instead
 const root = createRoot(document.getElementById('app'));
 root.render(<h1>Hello, world</h1>);
-```
+{{< /sandpack-file >}}
+{{< sandpack-file path="/index.html" hidden=true >}}
+<!DOCTYPE html>
+<html>
+  <head><title>My app</title></head>
+  <body>
+    <!-- Your existing page content (in this example, it gets replaced) -->
+    <div id="root"></div>
+  </body>
+</html>
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 If the entire content of your page was replaced by a "Hello, world!", everything worked! Keep reading.
 
@@ -108,21 +105,8 @@ Instead, you probably want to render your React components in specific places in
 
 This lets you find that HTML element with [`document.getElementById`](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById) and pass it to [`createRoot`](https://react.dev/reference/react-dom/client/createRoot) so that you can render your own React component inside:
 
-// add live edit part
-
-```html public/index.html
-<!DOCTYPE html>
-<html>
-  <head><title>My app</title></head>
-  <body>
-    <p>This paragraph is a part of HTML.</p>
-    <nav id="navigation"></nav>
-    <p>This paragraph is also a part of HTML.</p>
-  </body>
-</html>
-```
-
-```js src/index.js active
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/index.js" >}}
 import { createRoot } from 'react-dom/client';
 
 function NavigationBar() {
@@ -133,7 +117,19 @@ function NavigationBar() {
 const domNode = document.getElementById('navigation');
 const root = createRoot(domNode);
 root.render(<NavigationBar />);
-```
+{{< /sandpack-file >}}
+{{< sandpack-file path="/index.html" >}}
+<!DOCTYPE html>
+<html>
+  <head><title>My app</title></head>
+  <body>
+    <p>This paragraph is a part of HTML.</p>
+    <nav id="navigation"></nav>
+    <p>This paragraph is also a part of HTML.</p>
+  </body>
+</html>
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 Notice how the original HTML content from `index.html` is preserved, but your own `NavigationBar` React component now appears inside the `<nav id="navigation">` from your HTML. Read the [`createRoot` usage documentation](https://react.dev/reference/react-dom/client/createRoot#rendering-a-page-partially-built-with-react) to learn more about rendering React components inside an existing HTML page.
 

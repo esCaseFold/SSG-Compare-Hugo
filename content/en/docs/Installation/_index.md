@@ -8,8 +8,7 @@ description: React has been designed from the start for gradual adoption. You ca
 
 You don't need to install anything to play with React. Try editing this sandbox!
 
-// add live edit part
-```js {linenos=inline}
+{{< sandpack height="300px" >}}
 function Greeting({ name }) {
   return <h1>Hello, {name}</h1>;
 }
@@ -17,7 +16,7 @@ function Greeting({ name }) {
 export default function App() {
   return <Greeting name="world" />
 }
-```
+{{< /sandpack >}}
 
 You can edit it directly or open it in a new tab by pressing the "Fork" button in the upper right corner.
 

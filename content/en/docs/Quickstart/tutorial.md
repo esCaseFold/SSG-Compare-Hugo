@@ -20,8 +20,8 @@ In this tutorial, you'll build an interactive tic-tac-toe game with React.
 
 You can see what it will look like when you're finished here:
 
-// add live edit
-{{< highlight go "linenos=inline, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -137,7 +137,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 If the code doesn't make sense to you yet, or if you are unfamiliar with the code's syntax, don't worry! The goal of this tutorial is to help you understand React and its syntax.
 
@@ -149,14 +150,13 @@ Once you've played around with the finished tic-tac-toe game, keep scrolling. Yo
 
 In the live code editor below, click **Fork** in the top-right corner to open the editor in a new tab using the website CodeSandbox. CodeSandbox lets you write code in your browser and preview how your users will see the app you've created. The new tab should display an empty square and the starter code for this tutorial.
 
-// add live edit
-{{< highlight go "linenos=inline, hl_lines=3 6-8, style=emacs" >}}
-#```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 export default function Square() {
   return <button className="square">X</button>;
 }
-#```
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 >[!tip] :page_facing_up: Note
 >
@@ -326,9 +326,8 @@ export default function Board() {
 
 At this point your code should look something like this:
 
-// add live edit
-
-{{< highlight go "linenos=inline, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 export default function Board() {
   return (
     <>
@@ -350,7 +349,8 @@ export default function Board() {
     </>
   );
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 >[!tip] :page_facing_up: Note
 >
@@ -473,9 +473,8 @@ Now you should see a grid of numbers again:
 
 Your updated code should look like this:
 
-// add live edit and title
-
-{{< highlight go "linenos=inline, hl_lines=2, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 function Square({ value }) {
   return <button className="square">{value}</button>;
 }
@@ -501,7 +500,8 @@ export default function Board() {
     </>
   );
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ### Making an interactive component
 
@@ -604,9 +604,8 @@ Each Square has its own state: the `value` stored in each Square is completely i
 
 After you've made the above changes, your code will look like this:
 
-// add live edit
-
-{{< highlight go "linenos=inline, hl_lines=2, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square() {
@@ -647,7 +646,8 @@ export default function Board() {
     </>
   );
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 
 ### React Developer Tools
@@ -740,9 +740,8 @@ At this point you should see an empty tic-tac-toe board:
 
 And your code should look like this:
 
-// add live edit
-
-{{< highlight go "linenos=inline, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value }) {
@@ -771,7 +770,8 @@ export default function Board() {
     </>
   );
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 Each Square will now receive a `value` prop that will either be `'X'`, `'O'`, or `null` for empty squares.
 
@@ -929,9 +929,8 @@ But this time all the state management is handled by the `Board` component!
 
 This is what your code should look like:
 
-// add live edit
-
-{{< highlight go "linenos=inline, style=emacs" >}}
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -971,7 +970,8 @@ export default function Board() {
     </>
   );
 }
-{{< /highlight >}}
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 Now that your state handling is in the `Board` component, the parent `Board` component passes props to the child `Square` components so that they can be displayed correctly. When clicking on a `Square`, the child `Square` component now asks the parent `Board` component to update the state of the board. When the `Board`'s state changes, both the `Board` component and every child `Square` re-renders automatically. Keeping the state of all squares in the `Board` component will allow it to determine the winner in the future.
 
@@ -1074,9 +1074,8 @@ function handleClick(i) {
 
 Now you can only add `X`'s or `O`'s to empty squares! Here is what your code should look like at this point:
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -1125,7 +1124,8 @@ export default function Board() {
     </>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ### Declaring a winner
 
@@ -1197,9 +1197,8 @@ export default function Board() {
 
 Congratulations! You now have a working tic-tac-toe game. And you've just learned the basics of React too. So _you_ are the real winner here. Here is what the code should look like:
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -1277,7 +1276,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ## Adding time travel
 
@@ -1428,9 +1428,8 @@ For example, if `history` is `[[null,null,null], ["X",null,null]]` and `nextSqua
 
 At this point, you've moved the state to live in the `Game` component, and the UI should be fully working, just as it was before the refactor. Here is what the code should look like at this point:
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -1526,7 +1525,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ### Showing the past moves
 
@@ -1593,9 +1593,8 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 
 You'll fix this error in the next section.
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -1709,7 +1708,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 As you iterate through the `history` array inside the function you passed to `map`, the `squares` argument goes through each element of `history`, and the `move` argument goes through each array index: `0`, `1`, `2`, …. (In most cases, you'd need the actual array elements, but to render a list of moves you will only need indexes.)
 
@@ -1773,9 +1773,8 @@ const moves = history.map((squares, move) => {
 });
 ```
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -1890,7 +1889,8 @@ function calculateWinner(squares) {
   return null;
 }
 
-```
+{{< /sandpack-file>}}
+{{< /sandpack >}}
 
 Before you can implement `jumpTo`, you need the `Game` component to keep track of which step the user is currently viewing. To do this, define a new state variable called `currentMove`, defaulting to `0`:
 
@@ -1946,9 +1946,8 @@ export default function Game() {
 
 If you click on any step in the game's history, the tic-tac-toe board should immediately update to show what the board looked like after that step occurred.
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({value, onSquareClick}) {
@@ -2066,7 +2065,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ### Final cleanup
 
@@ -2109,9 +2109,8 @@ Nice work! We hope you now feel like you have a decent grasp of how React works.
 
 Check out the final result here:
 
-// add live edit
-
-```js src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -2227,9 +2226,8 @@ function calculateWinner(squares) {
   }
   return null;
 }
-```
-
-```css src/styles.css
+{{< /sandpack-file >}}
+{{< sandpack-file title="/styles.css" hidden=true >}}
 * {
   box-sizing: border-box;
 }
@@ -2272,7 +2270,8 @@ body {
 .game-info {
   margin-left: 20px;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 If you have extra time or want to practice your new React skills, here are some ideas for improvements that you could make to the tic-tac-toe game, listed in order of increasing difficulty:
 

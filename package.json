@@ -77,7 +77,8 @@
   },
   "allowScripts": {
     "@parcel/watcher": false,
-    "hugo-extended@0.166.0": true
+    "hugo-extended@0.166.0": true,
+    "es5-ext": false
   },
   "private": true,
   "prettier": {
@@ -86,6 +87,10 @@
   },
   "cSpell:ignore": "",
   "dependencies": {
+    "@codesandbox/sandpack-client": "^2.19.8",
+    "@codesandbox/sandpack-react": "^2.20.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "react-live": "^5.0.1"
   }
 }

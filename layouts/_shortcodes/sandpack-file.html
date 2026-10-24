@@ -1,0 +1,4 @@
+<textarea data-path="{{ .Get "path" }}"
+          {{ if eq (printf "%v" (.Get "hidden")) "true" }}data-hidden="true"{{ end }}
+          {{ if eq (printf "%v" (.Get "active")) "true" }}data-active="true"{{ end }}
+          spellcheck="false">{{ .Inner }}</textarea>

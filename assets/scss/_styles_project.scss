@@ -21,3 +21,9 @@ https://www.docsy.dev/docs/content/lookandfeel/#project-style-files
     color: tint-color($primary, 80%) !important;
   }
 }
+
+// Sandpack settings
+.sandpack-preview {
+  width: 100%;
+  border: 1px solid #ccc;
+}

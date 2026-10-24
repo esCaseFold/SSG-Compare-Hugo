@@ -1,0 +1,15 @@
+{{ if .HasShortcode "sandpack" }}
+  {{ with resources.Get "js/sandpack-island.jsx" }}
+    {{ $opts := dict
+        "minify" hugo.IsProduction
+        "format" "iife"
+        "target" "es2018"
+        "jsx" "automatic"
+        "jsxImportSource" "react"
+        "defines" (dict "process.env.NODE_ENV" `"production"`)
+    }}
+    {{ with . | js.Build $opts }}
+      <script src="{{ .RelPermalink }}" defer></script>
+    {{ end }}
+  {{ end }}
+{{ end }}

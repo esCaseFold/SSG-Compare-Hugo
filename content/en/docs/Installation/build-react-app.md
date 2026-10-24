@@ -31,10 +31,9 @@ The first step is to install a build tool like `vite`, `parcel`, or `rsbuild`. T
 
 [Vite](https://vite.dev/) is a build tool that aims to provide a faster and leaner development experience for modern web projects.
 
-//TerminalBlock
-``` title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npm create vite@latest my-app -- --template react-ts
-```
+{{< /card >}}
 
 Vite is opinionated and comes with sensible defaults out of the box. Vite has a rich ecosystem of plugins to support fast refresh, JSX,  Babel/SWC, and other common features. See Vite's [React plugin](https://vite.dev/plugins/#vitejs-plugin-react) or [React SWC plugin](https://vite.dev/plugins/#vitejs-plugin-react-swc) and [React SSR example project](https://vite.dev/guide/ssr.html#example-projects) to get started.
 
@@ -44,10 +43,9 @@ Vite is already being used as a build tool in one of our [recommended frameworks
 
 [Parcel](https://parceljs.org/) combines a great out-of-the-box development experience with a scalable architecture that can take your project from just getting started to massive production applications.
 
-//TerminalBlock
-``` title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npm install --save-dev parcel
-```
+{{< /card >}}
 
 Parcel supports fast refresh, JSX, TypeScript, Flow, and styling out of the box. See [Parcel's React recipe](https://parceljs.org/recipes/react/#getting-started) to get started.
 
@@ -55,20 +53,16 @@ Parcel supports fast refresh, JSX, TypeScript, Flow, and styling out of the box.
 
 [Rsbuild](https://rsbuild.dev/) is an Rspack-powered build tool that provides a seamless development experience for React applications. It comes with carefully tuned defaults and performance optimizations ready to use.
 
-//TerminalBlock
-``` title="Terminal"
+{{< card code=true header="**Terminal**" lang="bash" >}}
 npx create-rsbuild --template react
-```
+{{< /card >}}
 
 Rsbuild includes built-in support for React features like fast refresh, JSX, TypeScript, and styling. See [Rsbuild's React guide](https://rsbuild.dev/guide/framework/react) to get started.
 
->[!tip] 
-
-#### Metro for React Native
-
-If you're starting from scratch with React Native you'll need to use [Metro](https://metrobundler.dev/), the JavaScript bundler for React Native. Metro supports bundling for platforms like iOS and Android, but lacks many features when compared to the tools here. We recommend starting with Vite, Parcel, or Rsbuild unless your project requires React Native support.
-
-:::
+>[!tip] :page_facing_up: Note
+>#### Metro for React Native
+>
+>If you're starting from scratch with React Native you'll need to use [Metro](https://metrobundler.dev/), the JavaScript bundler for React Native. Metro supports bundling for platforms like iOS and Android, but lacks many features when compared to the tools here. We recommend starting with Vite, Parcel, or Rsbuild unless your project requires React Native support.
 
 ## Step 2: Build Common Application Patterns
 
@@ -127,7 +121,7 @@ Since the build tool you select only supports single page apps (SPAs), you'll ne
 
 * **Single-page apps (SPA)** load a single HTML page and dynamically updates the page as the user interacts with the app. SPAs are easier to get started with, but they can have slower initial load times. SPAs are the default architecture for most build tools.
 
-* **Streaming Server-side rendering (SSR)** renders a page on the server and sends the fully rendered page to the client. SSR can improve performance, but it can be more complex to set up and maintain than a single-page app. With the addition of streaming, SSR can be very complex to set up and maintain. See [Vite's SSR guide]( https://vite.dev/guide/ssr).
+* **Streaming Server-side rendering (SSR)** renders a page on the server and sends the fully rendered page to the client. SSR can improve performance, but it can be more complex to set up and maintain than a single-page app. With the addition of streaming, SSR can be very complex to set up and maintain. See [Vite's SSR guide](https://vite.dev/guide/ssr).
 
 * **Static site generation (SSG)** generates static HTML files for your app at build time. SSG can improve performance, but it can be more complex to set up and maintain than server-side rendering. See [Vite's SSG guide](https://vite.dev/guide/ssr.html#pre-rendering-ssg).
 

@@ -67,8 +67,8 @@ To build a static version of your app that renders your data model, you'll want 
 
 You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
 
-// add live edit part
-```jsx src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 function ProductCategoryRow({ category }) {
   return (
     <tr>
@@ -160,7 +160,9 @@ const PRODUCTS = [
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
+
 
 (If this code looks intimidating, go through the [Quick Start](/content/en/docs/Quickstart/_index.md) first!)
 
@@ -201,15 +203,14 @@ Let's go through them one by one again:
 This means only the search text and the value of the checkbox are state! Nicely done!
 
 {{< details summary=":open_book: Deep Dive" >}}
->[!NB]
->#### Props vs State
->
->There are two types of "model" data in React: props and state. The two are very different:
->
->* [**Props** are like arguments you pass](https://react.dev/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
->* [**State** is like a component’s memory.](https://react.dev/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
->
->Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
+#### Props vs State
+
+There are two types of "model" data in React: props and state. The two are very different:
+
+* [**Props** are like arguments you pass](https://react.dev/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
+* [**State** is like a component’s memory.](https://react.dev/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
+
+Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
 
 {{< /details >}}
 
@@ -262,8 +263,8 @@ Then, pass `filterText` and `inStockOnly` to `ProductTable` and `SearchBar` as p
 
 You can start seeing how your application will behave. Edit the `filterText` initial value from `useState('')` to `useState('fruit')` in the sandbox code below. You'll see both the search input text and the table update:
 
-// add live edit part
-```jsx src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -380,7 +381,8 @@ const PRODUCTS = [
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 Notice that editing the form doesn't work yet. There is a console error in the sandbox above explaining why:
 
@@ -453,9 +455,8 @@ function SearchBar({
 
 Now the application fully works!
 
-// add live edit part
-
-```jsx src/App.js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 function FilterableProductTable({ products }) {
@@ -580,7 +581,8 @@ const PRODUCTS = [
 export default function App() {
   return <FilterableProductTable products={PRODUCTS} />;
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 You can learn all about handling events and updating state in the [Adding Interactivity](https://react.dev/learn/adding-interactivity) section.
 
