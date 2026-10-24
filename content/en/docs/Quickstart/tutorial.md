@@ -21,7 +21,7 @@ In this tutorial, you'll build an interactive tic-tac-toe game with React.
 You can see what it will look like when you're finished here:
 
 // add live edit
-{{< highlight go "linenos=inline, hl_lines=3 6-8, style=emacs" >}}
+{{< highlight go "linenos=inline, style=emacs" >}}
 import { useState } from 'react';
 
 function Square({ value, onSquareClick }) {
@@ -178,7 +178,7 @@ Now that you're set up, let's get an overview of React!
 
 In CodeSandbox you'll see three main sections:
 
-![CodeSandbox with starter code](../images/tutorial/react-starter-code-codesandbox.png)
+![CodeSandbox with starter code](/img/react-starter-code-codesandbox.png)
 
 1. The _Files_ section with a list of files like `App.js`, `index.js`, `styles.css` in `src` folder and a folder called `public`
 1. The _code editor_ where you'll see the source code of your selected file
@@ -257,9 +257,11 @@ export default function Square() {
 
 You'll get this error:
 
-// add console error
->[!danger] Console Error
->/src/App.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX Fragment `<>...</>`?
+>[!danger] Error
+>{{< card code=true header="Console" >}}
+/src/App.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX Fragment `<>...</>`?
+{{< /card >}}
+
 
 React components need to return a single JSX element and not multiple adjacent JSX elements like two buttons. To fix this you can use *Fragments* (`<>` and `</>`) to wrap multiple adjacent JSX elements like this:
 
@@ -312,7 +314,7 @@ export default function Square() {
 
 The CSS defined in `styles.css` styles the divs with the `className` of `board-row`. Now that you've grouped your components into rows with the styled `div`s you have your tic-tac-toe board:
 
-![tic-tac-toe board filled with numbers 1 through 9](../img/number-filled-board.png)
+![tic-tac-toe board filled with numbers 1 through 9](/img/number-filled-board.png)
 
 But you now have a problem. Your component named `Square`, really isn't a square anymore. Let's fix that by changing the name to `Board`:
 
@@ -865,12 +867,10 @@ Next, you will need to pass that `i` to `handleClick`. You could try to set the 
 
 Here is why this doesn't work. The `handleClick(0)` call will be a part of rendering the board component. Because `handleClick(0)` alters the state of the board component by calling `setSquares`, your entire board component will be re-rendered again. But this runs `handleClick(0)` again, leading to an infinite loop:
 
-// add console error
->[!danger] Console Error
->```js
->Too many re-renders. React limits the number of renders to prevent an infinite loop.
->```
-
+>[!danger] Error
+>{{< card code=true header="Console" >}}
+Too many re-renders. React limits the number of renders to prevent an infinite loop.
+{{< /card >}}
 
 Why didn't this problem happen earlier?
 
@@ -1586,9 +1586,10 @@ export default function Game() {
 
 You can see what your code should look like below. Note that you should see an error in the developer tools console that says:
 
-// add console styling
->[!warning] Console
->Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of &#96;Game&#96;.
+>[!warning]
+>{{< card code=true header="Console" >}}
+Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of `Game`.
+{{< /card >}}
 
 You'll fix this error in the next section.
 

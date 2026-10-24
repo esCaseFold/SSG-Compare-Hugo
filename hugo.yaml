@@ -1,10 +1,10 @@
-baseURL: https://example.docsy.dev
+baseURL: https://example.docsy.dev #https://esCaseFold.github.io/SSG-Compare-Hugo
 title: SSG-Compare-Hugo
 
 # In the project configuration file in the root of your local Git repository, set the location of the image cache to the cacheDir as shown below.
-#caches:
-  #images:
-    #dir: :cacheDir/images
+caches:
+  images:
+    dir: :cacheDir/images
 
 # cSpell:ignore goldmark github hugo readingtime docsy subdir lastmod pygments linenos catmullrom norsk gu slugorcontentbasename
 

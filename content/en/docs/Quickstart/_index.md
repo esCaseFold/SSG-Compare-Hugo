@@ -1,6 +1,6 @@
 ---
 title: Quick Start
-weight: 2
+weight: 1
 description: Welcome to the React documentation! This page will give you an introduction to 80% of the React concepts that you will use on a daily basis.
 ---
 
@@ -11,7 +11,6 @@ description: Welcome to the React documentation! This page will give you an intr
 >- How to render conditions and lists
 >- How to respond to events and update the screen
 >- How to share data between components
-
 
 ## Creating and nesting components
 
@@ -68,7 +67,7 @@ The `export default` keywords specify the main component in the file. If you're 
 
 ## Writing markup with JSX
 
-The markup syntax you've seen above is called *JSX*. It is optional, but most React projects use JSX for its convenience. All of the [tools we recommend for local development](/learn/installation) support JSX out of the box.
+The markup syntax you've seen above is called *JSX*. It is optional, but most React projects use JSX for its convenience. All of the [tools we recommend for local development](/docs/Installation/_index.md) support JSX out of the box.
 
 JSX is stricter than HTML. You have to close tags like `<br />`. Your component also can't return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
 
@@ -152,16 +151,6 @@ export default function Profile() {
       />
     </>
   );
-}
-```
-
-```css
-.avatar {
-  border-radius: 50%;
-}
-
-.large {
-  border: 4px solid gold;
 }
 ```
 
@@ -287,7 +276,7 @@ Notice how `onClick={handleClick}` has no parentheses at the end! Do not _call_ 
 
 Often, you'll want your component to "remember" some information and display it. For example, maybe you want to count the number of times a button is clicked. To do this, add *state* to your component.
 
-First, import [`useState`](/reference/react/useState) from React:
+First, import [`useState`](https://react.dev/reference/react/useState) from React:
 
 ```js
 import { useState } from 'react';
@@ -354,18 +343,11 @@ function MyButton() {
 }
 ```
 
-```css
-button {
-  display: block;
-  margin-bottom: 5px;
-}
-```
-
 Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
 
 ## Using Hooks
 
-Functions starting with `use` are called *Hooks*. `useState` is a built-in Hook provided by React. You can find other built-in Hooks in the [API reference.](/reference/react) You can also write your own Hooks by combining the existing ones.
+Functions starting with `use` are called *Hooks*. `useState` is a built-in Hook provided by React. You can find other built-in Hooks in the [API reference.](https://react.dev/reference/react) You can also write your own Hooks by combining the existing ones.
 
 Hooks are more restrictive than other functions. You can only call Hooks *at the top* of your components (or other Hooks). If you want to use `useState` in a condition or a loop, extract a new component and put it there.
 
@@ -373,21 +355,13 @@ Hooks are more restrictive than other functions. You can only call Hooks *at the
 
 In the previous example, each `MyButton` had its own independent `count`, and when each button was clicked, only the `count` for the button clicked changed:
 
-//DiagramGroup>
-
-//Diagram name="sharing_data_child" height={367} width={407} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. Both MyButton components contain a count with value zero.">
-
+{{% imgproc sharing_data_child Resize "445x410" %}}
 Initially, each `MyButton`'s `count` state is `0`
+{{% /imgproc %}}
 
-///Diagram>
-
-//Diagram name="sharing_data_child_clicked" height={367} width={407} alt="The same diagram as the previous, with the count of the first child MyButton component highlighted indicating a click with the count value incremented to one. The second MyButton component still contains value zero." >
-
+{{% imgproc sharing_data_child_clicked Resize "445x410" %}}
 The first `MyButton` updates its `count` to `1`
-
-///Diagram>
-
-///DiagramGroup>
+{{% /imgproc %}}
 
 However, often you'll need components to *share data and always update together*.
 
@@ -395,21 +369,13 @@ To make both `MyButton` components display the same `count` and update together,
 
 In this example, it is `MyApp`:
 
-//DiagramGroup>
-
-//Diagram name="sharing_data_parent" height={385} width={410} alt="Diagram showing a tree of three components, one parent labeled MyApp and two children labeled MyButton. MyApp contains a count value of zero which is passed down to both of the MyButton components, which also show value zero." >
-
+{{% imgproc sharing_data_parent Resize "445x410" %}}
 Initially, `MyApp`'s `count` state is `0` and is passed down to both children
+{{% /imgproc %}}
 
-///Diagram>
-
-//Diagram name="sharing_data_parent_clicked" height={385} width={410} alt="The same diagram as the previous, with the count of the parent MyApp component highlighted indicating a click with the value incremented to one. The flow to both of the children MyButton components is also highlighted, and the count value in each child is set to one indicating the value was passed down." >
-
+{{% imgproc sharing_data_parent_clicked Resize "445x410" %}}
 On click, `MyApp` updates its `count` state to `1` and passes it down to both children
-
-///Diagram>
-
-///DiagramGroup>
+{{% /imgproc %}}
 
 Now when you click either button, the `count` in `MyApp` will change, which will change both of the counts in `MyButton`. Here's how you can express this in code.
 
@@ -503,21 +469,8 @@ function MyButton({ count, onClick }) {
 }
 ```
 
-```css
-button {
-  display: block;
-  margin-bottom: 5px;
-}
-```
-
 ## Next Steps
 
 By now, you know the basics of how to write React code!
 
-Check out the [Tutorial](/learn/tutorial-tic-tac-toe) to put them into practice and build your first mini-app with React.
-
----
-
-## Sitemap
-
-[Overview of all docs pages](/llms.txt)
+Check out the [Tutorial](tutorial.md) to put them into practice and build your first mini-app with React.

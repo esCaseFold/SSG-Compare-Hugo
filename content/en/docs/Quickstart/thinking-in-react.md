@@ -41,23 +41,13 @@ If your JSON is well-structured, you'll often find that it naturally maps to the
 
 There are five components on this screen:
 
-{{% pageinfo color="warning td-max-width-on-larger-screens mx-0" %}}
-
-This is a placeholder page. Replace it with your own content.
-
-//CodeDiagram flip>
-
-<img src="/images/docs/s_thinking-in-react_ui_outline.png" width="500" style={{margin: '0 auto'}} />
+![List of fruit and vegetables](s_thinking-in-react_ui_outline.png)
 
 1. `FilterableProductTable` (grey) contains the entire app.
 2. `SearchBar` (blue) receives the user input.
 3. `ProductTable` (lavender) displays and filters the list according to the user input.
 4. `ProductCategoryRow` (green) displays a heading for each category.
 5. `ProductRow`	(yellow) displays a row for each product.
-
-////CodeDiagram>
-
-{{% /pageinfo %}}
 
 If you look at `ProductTable` (lavender), you'll see that the table header (containing the "Name" and "Price" labels) isn't its own component. This is a matter of preference, and you could go either way. For this example, it is a part of `ProductTable` because it appears inside the `ProductTable`'s list. However, if this header grows to be complex (e.g., if you add sorting), you can move it into its own `ProductTableHeader` component.
 
@@ -73,7 +63,7 @@ Now that you've identified the components in the mockup, arrange them into a hie
 
 Now that you have your component hierarchy, it's time to implement your app. The most straightforward approach is to build a version that renders the UI from your data model without adding any interactivity... yet! It's often easier to build the static version first and add interactivity later. Building a static version requires a lot of typing and no thinking, but adding interactivity requires a lot of thinking and not a lot of typing.
 
-To build a static version of your app that renders your data model, you'll want to build [components](/learn/your-first-component) that reuse other components and pass data using [props.](/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
+To build a static version of your app that renders your data model, you'll want to build [components](https://react.dev/learn/your-first-component) that reuse other components and pass data using [props.](https://react.dev/learn/passing-props-to-a-component) Props are a way of passing data from parent to child. (If you're familiar with the concept of [state](https://react.dev/learn/state-a-components-memory), don't use state at all to build this static version. State is reserved only for interactivity, that is, data that changes over time. Since this is a static version of the app, you don't need it.)
 
 You can either build "top down" by starting with building the components higher up in the hierarchy (like `FilterableProductTable`) or "bottom up" by working from components lower down (like `ProductRow`). In simpler examples, it’s usually easier to go top-down, and on larger projects, it’s easier to go bottom-up.
 
@@ -172,33 +162,13 @@ export default function App() {
 }
 ```
 
-```css
-body {
-  padding: 5px
-}
-label {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-th {
-  padding-top: 10px;
-}
-td {
-  padding: 2px;
-  padding-right: 40px;
-}
-```
-
-(If this code looks intimidating, go through the [Quick Start](/learn/) first!)
+(If this code looks intimidating, go through the [Quick Start](/content/en/docs/Quickstart/_index.md) first!)
 
 After building your components, you'll have a library of reusable components that render your data model. Because this is a static app, the components will only return JSX. The component at the top of the hierarchy (`FilterableProductTable`) will take your data model as a prop. This is called _one-way data flow_ because the data flows down from the top-level component to the ones at the bottom of the tree.
 
-:::caution
-
-At this point, you should not be using any state values. That’s for the next step!
-
-:::
+>[!caution]
+>
+>At this point, you should not be using any state values. That’s for the next step!
 
 ## Step 3: Find the minimal but complete representation of UI state
 
@@ -231,14 +201,15 @@ Let's go through them one by one again:
 This means only the search text and the value of the checkbox are state! Nicely done!
 
 {{< details summary=":open_book: Deep Dive" >}}
-#### Props vs State
-
-There are two types of "model" data in React: props and state. The two are very different:
-
-* [**Props** are like arguments you pass](/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
-* [**State** is like a component’s memory.](/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
-
-Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
+>[!NB]
+>#### Props vs State
+>
+>There are two types of "model" data in React: props and state. The two are very different:
+>
+>* [**Props** are like arguments you pass](https://react.dev/learn/passing-props-to-a-component) to a function. They let a parent component pass data to a child component and customize its appearance. For example, a `Form` can pass a `color` prop to a `Button`.
+>* [**State** is like a component’s memory.](https://react.dev/learn/state-a-components-memory) It lets a component keep track of some information and change it in response to interactions. For example, a `Button` might keep track of `isHovered` state.
+>
+>Props and state are different, but they work together. A parent component will often keep some information in state (so that it can change it), and *pass it down* to child components as their props. It's okay if the difference still feels fuzzy on the first read. It takes a bit of practice for it to really stick!
 
 {{< /details >}}
 
@@ -411,30 +382,13 @@ export default function App() {
 }
 ```
 
-```css
-body {
-  padding: 5px
-}
-label {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-th {
-  padding-top: 5px;
-}
-td {
-  padding: 2px;
-}
-```
-
 Notice that editing the form doesn't work yet. There is a console error in the sandbox above explaining why:
-// add terminal style
-//ConsoleBlock level="error">
-:::danger
+
+>[!danger] Error
+>{{< card code=true header="**Console**" >}}
 You provided a \`value\` prop to a form field without an \`onChange\` handler. This will render a read-only field.
-:::
-///ConsoleBlock>
+{{< /card >}}
+
 
 In the sandbox above, `ProductTable` and `SearchBar` read the `filterText` and `inStockOnly` props to render the table, the input, and the checkbox. For example, here is how `SearchBar` populates the input value:
 
@@ -628,31 +582,9 @@ export default function App() {
 }
 ```
 
-```css
-body {
-  padding: 5px
-}
-label {
-  display: block;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-th {
-  padding: 4px;
-}
-td {
-  padding: 2px;
-}
-```
-
-You can learn all about handling events and updating state in the [Adding Interactivity](/learn/adding-interactivity) section.
+You can learn all about handling events and updating state in the [Adding Interactivity](https://react.dev/learn/adding-interactivity) section.
 
 ## Where to go from here
 
-This was a very brief introduction to how to think about building components and applications with React. You can [start a React project](/learn/installation) right now or [dive deeper on all the syntax](/learn/describing-the-ui) used in this tutorial.
+This was a very brief introduction to how to think about building components and applications with React. You can [start a React project](/content/en/docs/Installation/_index.md) right now or [dive deeper on all the syntax](https://react.dev/learn/describing-the-ui) used in this tutorial.
 
----
-
-## Sitemap
-
-[Overview of all docs pages](/llms.txt)
