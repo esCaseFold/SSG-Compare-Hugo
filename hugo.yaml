@@ -1,4 +1,4 @@
-baseURL: https://example.docsy.dev #https://esCaseFold.github.io/SSG-Compare-Hugo
+baseURL: https://esCaseFold.github.io/SSG-Compare-Hugo #https://example.docsy.dev
 title: SSG-Compare-Hugo
 
 # In the project configuration file in the root of your local Git repository, set the location of the image cache to the cacheDir as shown below.
