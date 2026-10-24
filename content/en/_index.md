@@ -6,9 +6,10 @@ params:
 ---
 
 {{% blocks/cover
-  title="Welcome to SSG-Compare-Hugo: Part of a compare and contrast between GitBook, Docusaurus, and Hugo!"
+  title="Welcome to SSG-Compare-Hugo: Part of a compare and contrast of SSGs: GitBook, Docusaurus, and Hugo!"
   height="full td-below-navbar"
   image_anchor="top"
+  color="primary bg-gradient td-below-navbar"
 %}}
 
 <!--
@@ -24,7 +25,7 @@ params:
 <!-- prettier-ignore -->
 <div class="td-cta-buttons my-5">
   <a {{% _param btn-lg primary %}} href="docs/">
-    Learn more
+    Start Here
   </a>
   <a {{% _param btn-lg secondary %}}
     href="{{% param github_repo %}}"
@@ -40,54 +41,7 @@ params:
 
 {{% blocks/lead color="white" %}}
 
-Goldydocs provides a single web UI providing visibility into porridge
-temperature, chair size, and bed softness metrics! You can even find out who's
-been eating **your** porridge.
-
-(Sadly, Goldydocs isn't a real project, but you can use this site as an example
-to create your own real websites with [Docsy](https://docsy.dev))
+SSG-Compare-Hugo is a website build by [Ethan Sattersten](https://ethansattersten.com) to learn how different SSGs work.
 
 {{% /blocks/lead %}}
 
-{{% blocks/section color="primary" type="row" %}}
-
-{{% blocks/feature title="New chair metrics!" icon="fa-lightbulb" %}}
-
-The Goldydocs UI now shows chair size metrics by default.
-
-Please follow this space for updates!
-
-{{% /blocks/feature %}}
-
-{{% blocks/feature
-  title="Contributions welcome!" icon="fab fa-github"
-  url="https://github.com/docsy/docsy-example"
-%}}
-
-We do a [Pull Request](https://github.com/docsy/docsy-example/pulls)
-contributions workflow on **GitHub**. New users are always welcome!
-
-{{% /blocks/feature %}}
-
-{{% blocks/feature
-  title="Follow us on X!" icon="fab fa-x-twitter"
-  url="https://x.com/docsydocs"
-%}}
-
-For announcement of latest features etc.
-
-{{% /blocks/feature %}}
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="white" type="row text-center h1" %}}
-
-This is the second section
-
-{{% /blocks/section %}}
-
-{{% blocks/section color="secondary" type="row text-center h1" %}}
-
-This is the another section with center alignment
-
-{{% /blocks/section %}}

@@ -43,8 +43,8 @@ Notice that `<MyButton />` starts with a capital letter. That's how you know it'
 
 Have a look at the result:
 
-// add live edit part
-```js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 function MyButton() {
   return (
     <button>
@@ -61,7 +61,8 @@ export default function MyApp() {
     </div>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 The `export default` keywords specify the main component in the file. If you're not familiar with some piece of JavaScript syntax, [MDN](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) and [javascript.info](https://javascript.info/import-export) have great references.
 
@@ -128,8 +129,8 @@ return (
 
 You can put more complex expressions inside the JSX curly braces too, for example, [string concatenation](https://javascript.info/operators#string-concatenation-with-binary):
 
-// add live edit part
-```js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 const user = {
   name: 'Hedy Lamarr',
   imageUrl: 'https://react.dev/images/docs/scientists/yXOvdOSs.jpg',
@@ -152,7 +153,8 @@ export default function Profile() {
     </>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 In the above example, `style={{}}` is not a special syntax, but a regular `{}` object inside the `style={ }` JSX curly braces. You can use the `style` attribute when your styles depend on JavaScript variables.
 
@@ -226,8 +228,8 @@ return (
 
 Notice how `<li>` has a `key` attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
 
-// add live edit part
-```js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 const products = [
   { title: 'Cabbage', isFruit: false, id: 1 },
   { title: 'Garlic', isFruit: false, id: 2 },
@@ -250,7 +252,8 @@ export default function ShoppingList() {
     <ul>{listItems}</ul>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ## Responding to events
 
@@ -314,8 +317,8 @@ React will call your component function again. This time, `count` will be `1`. T
 
 If you render the same component multiple times, each will get its own state. Click each button separately:
 
-// add live edit part
-```js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 export default function MyApp() {
@@ -341,7 +344,8 @@ function MyButton() {
     </button>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 Notice how each button "remembers" its own `count` state and doesn't affect other buttons.
 
@@ -440,8 +444,8 @@ function MyButton({ count, onClick }) {
 
 When you click the button, the `onClick` handler fires. Each button's `onClick` prop was set to the `handleClick` function inside `MyApp`, so the code inside of it runs. That code calls `setCount(count + 1)`, incrementing the `count` state variable. The new `count` value is passed as a prop to each button, so they all show the new value. This is called "lifting state up". By moving state up, you've shared it between components.
 
-// add live edit part
-```js
+{{< sandpack height="300px" >}}
+{{< sandpack-file path="/App.js" >}}
 import { useState } from 'react';
 
 export default function MyApp() {
@@ -467,7 +471,8 @@ function MyButton({ count, onClick }) {
     </button>
   );
 }
-```
+{{< /sandpack-file >}}
+{{< /sandpack >}}
 
 ## Next Steps
 

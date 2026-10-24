@@ -1,9 +1,9 @@
 ---
 title: Blog
-aliases: [/blog/2018/]
+aliases: [/blog/2026/]
 menu: { main: { weight: 30 } }
 ---
 
-This is the **blog** section. It has two categories: News and Releases.
+This is the **blog** section. This is left over from the template.
 
-Files in these directories will be listed in reverse chronological order.
+Go to [Docs](/content/en/docs/_index.md) for primary content!

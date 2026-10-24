@@ -9,6 +9,7 @@ menu: { main: { weight: 10 } }
   title="About SSG-Compare-Hugo"
   height="auto td-below-navbar"
   image_anchor="bottom"
+  color="primary bg-gradient td-below-navbar"
 %}}
 
 <!-- prettier-ignore -->
@@ -19,19 +20,10 @@ menu: { main: { weight: 10 } }
 
 {{% blocks/lead color="white" %}}
 
-SSG-Compare-Hugo is a sample site using the [Docsy](https://github.com/docsy/docsy)
-Hugo theme that shows what it and Hugo can do
+SSG-Compare-Hugo is a site built using the [Docsy](https://github.com/docsy/docsy)
+Hugo theme to help me figure out what Docsy can do.
+
+Assigned by the [Technical Writer Mentorship Program](https://technicalwritingmp.com).
 
 {{% /blocks/lead %}}
 
-{{% blocks/section type="row text-center h1" %}}
-
-This is another section with center alignment
-
-{{% /blocks/section %}}
-
-{{% blocks/section type="h1" %}}
-
-This is another section with default alignment
-
-{{% /blocks/section %}}
